@@ -28,14 +28,9 @@ let youtube;
 async function initYouTube() {
     try {
         youtube = await Innertube.create({
-            // استخدام cache لتحسين الأداء
-            cache: {
-                enabled: true,
-                ttl: 3600 // 1 hour
-            },
-            // تفعيل cookies إذا كنت تريد تحميل فيديوهات محمية
-            // cookie: 'your-cookie-string-here'
-        });
+            cache: false   // أوقف الكاش بالكامل
+            });
+
         console.log('✅ YouTube.js initialized successfully');
     } catch (error) {
         console.error('❌ Failed to initialize YouTube.js:', error);
