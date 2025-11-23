@@ -18,7 +18,7 @@ npm install
 node youtube_api_youtubejs.js
 
 # 3. الاختبار
-curl "http://localhost:3000/api/info?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+curl "https://fasttube-node-js.onrender.com/api/info?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 ```
 
 **لماذا هذا الحل؟**
@@ -37,7 +37,7 @@ pip install flask flask-cors requests
 python youtube_api_alternative_python.py
 
 # 3. الاختبار
-curl "http://localhost:3000/api/info?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+curl "https://fasttube-node-js.onrender.com/api/info?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 ```
 
 **متى تستخدمه؟**
@@ -171,7 +171,7 @@ GET /health
 // الحصول على معلومات الفيديو
 async function getVideoInfo(url) {
     const response = await fetch(
-        `http://localhost:3000/api/info?url=${encodeURIComponent(url)}`
+        `https://fasttube-node-js.onrender.com/api/info?url=${encodeURIComponent(url)}`
     );
     return await response.json();
 }
@@ -184,7 +184,7 @@ console.log(info.title);
 ### مثال تحميل:
 
 ```html
-<a href="http://localhost:3000/api/download?url=VIDEO_URL" download>
+<a href="https://fasttube-node-js.onrender.com/api/download?url=VIDEO_URL" download>
     تحميل الفيديو
 </a>
 ```

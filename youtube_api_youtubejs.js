@@ -28,6 +28,7 @@ let youtube;
 async function initYouTube() {
     try {
         youtube = await Innertube.create({
+            cookie: 'cookies.txt',
             cache: false   // أوقف الكاش بالكامل
             });
 
