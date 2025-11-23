@@ -1,0 +1,69 @@
+# Render.com Blueprint Configuration
+# استخدم هذا الملف للنشر التلقائي على Render
+
+services:
+  # ==========================================
+  # الحل الموصى به: YouTube.js (Node.js)
+  # ==========================================
+  - type: web
+    name: youtube-downloader-api
+    env: node
+    region: oregon  # أو أي منطقة تفضلها
+    plan: free      # أو starter/standard للخطط المدفوعة
+    
+    # Node.js settings
+    buildCommand: npm install
+    startCommand: node youtube_api_youtubejs.js
+    
+    # Environment variables
+    envVars:
+      - key: NODE_VERSION
+        value: 18.17.0
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        sync: false  # Render will set this automatically
+    
+    # Health check
+    healthCheckPath: /health
+    
+    # Auto-deploy
+    autoDeploy: true
+    branch: main
+
+  # ==========================================
+  # البديل: InnerTube Python (إذا اخترته)
+  # ==========================================
+  # لتفعيل هذا البديل، احذف التعليق من الأسطر التالية
+  # وعلّق على service أعلاه
+  
+  # - type: web
+  #   name: youtube-downloader-api-python
+  #   env: python
+  #   region: oregon
+  #   plan: free
+  #   
+  #   # Python settings
+  #   buildCommand: pip install -r requirements_alternative.txt
+  #   startCommand: python youtube_api_alternative_python.py
+  #   
+  #   # Environment variables
+  #   envVars:
+  #     - key: PYTHON_VERSION
+  #       value: 3.10
+  #     - key: PORT
+  #       sync: false
+  #   
+  #   # Health check
+  #   healthCheckPath: /health
+  #   
+  #   # Auto-deploy
+  #   autoDeploy: true
+  #   branch: main
+
+# ==========================================
+# ملاحظات:
+# ==========================================
+# 1. حذف التعليق من الحل الذي تريده فقط
+# 2. Render ستستخدم هذا الملف تلقائياً عند الربط بـ GitHub
+# 3. يمكنك تعديل الإعدادات من Dashboard أيضاً

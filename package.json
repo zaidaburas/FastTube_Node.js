@@ -1,0 +1,30 @@
+{
+  "name": "youtube-downloader-api-youtubejs",
+  "version": "2.0.0",
+  "description": "YouTube Downloader API using YouTube.js (InnerTube) - مضمون 100%",
+  "main": "youtube_api_youtubejs.js",
+  "scripts": {
+    "start": "node youtube_api_youtubejs.js",
+    "dev": "nodemon youtube_api_youtubejs.js"
+  },
+  "keywords": [
+    "youtube",
+    "downloader",
+    "api",
+    "youtubejs",
+    "innertube"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "youtubei.js": "^10.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
